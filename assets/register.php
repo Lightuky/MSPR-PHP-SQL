@@ -22,9 +22,10 @@ if ($errored) {
 else {
     $id = setNewUser($data);
 
-    $pathError =  '/index.php';
-    header('Location: '. $pathError);
-
     session_start();
-    $user = $id;
+    $_SESSION['auth_id'] = $id;
+
+    $pathSuccess =  "/user.php?id=" . $_SESSION['auth_id'];
+    header('Location: '. $pathSuccess);
+
 }

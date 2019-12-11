@@ -1,8 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
-require_once 'includes/config.php';
-require_once 'includes/helpers.php';
-require_once 'includes/db.php';
+require_once 'config.php';
+require_once 'helpers.php';
 session_start();
 ?>
 <!doctype html>
@@ -30,14 +29,14 @@ session_start();
                 </ul>
             </div>
             <?php
-            if (empty($_SESSION['slug'])) {
-                ?><a href="login.php" class="btn btn-primary">Connexion</a><?php
+            if (!isset($_SESSION['auth_id'])) {
+                ?><a href="login.php" class="nav-link">Connexion</a><?php
             }
             else {
-                ?><a href="profile.php?id=<?php echo $_SESSION['slug'] ?>" class="btn btn-info">Mon Profil</a>
-                <a href="disconnect.php" class="btn btn-danger ml-4 rounded-circle font-weight-bold" title="Déconnexion">X</a><?php
+                ?><a href="user.php?id=<?php echo $_SESSION['auth_id'] ?>" class="nav-link">Mon Profil</a>
+                <a href="assets/logout.php" class="nav-link">Se déconnecter</a><?php
             }
             ?>
         </nav>
     </header>
-    <main id="main" class="bg-dark">
+    <main id="main">

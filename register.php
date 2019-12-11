@@ -13,7 +13,7 @@ $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
                 <div class="form-group">
                     <label for="first_name">Prénom</label>
                     <input type="text" name="first_name" id="first_name" class="form-control">
-                    <small class="invalid-feedback"><?php echo isset($errors) ?></small>
+                    <small class="invalid-feedback"><?php echo isset($errors['last_name']) && isset($errors['last_name']['error']) ?></small>
                 </div>
                 <div class="form-group">
                     <label for="last_name">Nom</label>

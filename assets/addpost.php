@@ -1,8 +1,8 @@
 <?php
 
-session_start();
-
 require_once '../includes/helpers.php';
+
+session_start();
 
 $data = [];
 $fields = [];
@@ -14,17 +14,15 @@ foreach ($_POST as $name => $value) {
     $fields[$name]['old'] = $value;
     $fields[$name]['error'] = !$value ? 'Ce champ est obligatoire' : NULL;
 }
+
 if ($errored) {
-    session_start();
     $_SESSION['fields'] = $fields;
-    $pathError =  '/login.php?errored=true';
+    $pathError =  '/index.php?errored=true';
     header('Location: '. $pathError);
 }
 else {
-    $user = authUser($data);
-    foreach ($user as $name => $value) {
-        $_SESSION["auth_$name"] = $value;
-    }
-    $pathSuccess =  "/user.php?id=" . $_SESSION['auth_id'];
+    addNewPost($data, $_SESSION['auth_id']);
+
+    $pathSuccess =  "/index.php";
     header('Location: '. $pathSuccess);
 }
