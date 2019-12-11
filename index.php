@@ -14,7 +14,7 @@ $posts = getUserPublications();
                         <a href="events.php" class="h3 nav-link text-warning">Evenements</a>
                     </div>
                 </div>
-                <div class="col-6 m-auto" id="feed" style="overflow: hidden;">
+                <div class="col-6" id="feed" style="overflow: hidden; margin-left: 22% !important;">
                     <div class="card">
                         <div class="card-header text-center">
                             Ajouter une publication
@@ -47,7 +47,7 @@ $posts = getUserPublications();
                     </a>
                     <?php } ?>
                 </div>
-                <div class="col-3 position-fixed" style="right: 5%;">
+                <div style="right: 0;" class="col-3 position-absolute mr-5">
                     <div class="card">
                         <input type="text" class="form-control" placeholder="Recherche">
                     </div>
