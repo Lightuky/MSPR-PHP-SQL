@@ -17,24 +17,24 @@ session_start();
 <div id="app">
     <header id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.php">Accueil</a>
+            <a class="navbar-brand" href="index.php"><img src="img/logo-yellow.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="messages.php">Messages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="groups.php">Groupes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.php">Evenements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="messages.php"><img src="img/chat.png"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="groups.php"><img src="img/group.png"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.php"><img src="img/event.png"></a></li>
                 </ul>
             </div>
             <?php
             if (!isset($_SESSION['auth_id'])) {
-                ?><a href="login.php" class="nav-link">Connexion</a><?php
+                ?><a href="login.php" class="nav-link"><img src="img/chat.png"></a><?php
             }
             else {
-                ?><a href="user.php?id=<?php echo $_SESSION['auth_id'] ?>" class="nav-link">Mon Profil</a>
-                <a href="assets/logout.php" class="nav-link">Se déconnecter</a><?php
+                ?><a href="user.php?id=<?php echo $_SESSION['auth_id'] ?>" class="nav-link"><img src="img/account.png"></a>
+                <a href="assets/logout.php" class="nav-link"><img src="img/power-button.png"></a><?php
             }
             ?>
         </nav>
