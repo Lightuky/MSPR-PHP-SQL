@@ -17,7 +17,7 @@ $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
                 </div>
                 <div class="form-group">
                     <label for="last_name">Nom</label>
-                    <input type="last_name" name="last_name" id="last_name" class="form-control">
+                    <input type="text" name="last_name" id="last_name" class="form-control">
                     <small class="invalid-feedback"><?php echo isset($errors) ?></small>
                 </div>
                 <div class="form-group">
